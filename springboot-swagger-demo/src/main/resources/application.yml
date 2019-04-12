@@ -1,0 +1,9 @@
+swagger2:
+    groups:
+        v1:
+          basePackage: com.moming.controller.v1
+          title: 登录相关
+        v2:
+          basePackage: com.moming.controller.v2
+          title: 业务相关
+
