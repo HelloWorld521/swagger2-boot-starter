@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * example
+ * 读取 application 配置文件
  *
  * @author hjy
  * @date 2019/4/11
@@ -20,7 +20,7 @@ import java.util.Map;
 public class Swagger2Properties {
 
     /**
-     * 分组文档
+     * 分组
      */
     private Map<String, GroupInfo> groups = new LinkedHashMap<>();
 

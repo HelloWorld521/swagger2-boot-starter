@@ -33,6 +33,11 @@ public class Swagger2AutoConfiguration implements BeanFactoryAware {
 
     private BeanFactory beanFactory;
 
+    /**
+     * 获取 beanFactroy
+     * @param beanFactory beanFactory
+     * @throws BeansException
+     */
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
@@ -48,6 +53,7 @@ public class Swagger2AutoConfiguration implements BeanFactoryAware {
     public List<Docket> createRestOpenApi(Swagger2Properties properties) {
         ConfigurableBeanFactory configurableBeanFactory = (ConfigurableBeanFactory) beanFactory;
         List<Docket> docketList = new ArrayList<>();
+        // swagger 配置
         for (String groupName : properties.getGroups().keySet()) {
             Swagger2Properties.GroupInfo groupInfo = properties.getGroups().get(groupName);
             String basePackage = groupInfo.getBasePackage();
@@ -59,6 +65,7 @@ public class Swagger2AutoConfiguration implements BeanFactoryAware {
                     .paths(PathSelectors.any())
                     .build();
             docketList.add(docket);
+            // docket 加入 IOC 容器
             configurableBeanFactory.registerSingleton(groupName, docket);
         }
         return docketList;
