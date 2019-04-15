@@ -4,15 +4,45 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
+        <artifactId>spring-boot-parent</artifactId>
         <version>2.1.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.moming.swagger</groupId>
+    <groupId>com.github.helloworld521</groupId>
     <artifactId>swagger2-boot-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>swagger2-boot-starter</name>
     <description>swagger2-boot-starter</description>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven3/</url>
+        </repository>
+    </distributionManagement>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>actable</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/HelloWorld521</url>
+        <connection>git@github.com:HelloWorld521/swagger2-boot-starter.git</connection>
+        <developerConnection>https://github.com/HelloWorld521/swagger2-boot-starter.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Moming</name>
+            <email>563642668@qq.com</email>
+            <url>https://github.com/HelloWorld521</url>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>1.8</java.version>
