@@ -9,7 +9,7 @@ springboot 自动装配 swagger2
         <dependency>
             <groupId>com.github.helloworld521</groupId>
             <artifactId>swagger2-boot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
     ```
 2. 参数配置
