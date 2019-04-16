@@ -10,17 +10,16 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * è¯»å– application é…ç½®æ–‡ä»¶
+ * ¶ÁÈ¡ application ÅäÖÃÎÄ¼ş
  *
  * @author hjy
- * @date 2019/4/11
  **/
 @Data
 @ConfigurationProperties("swagger2")
 public class Swagger2Properties {
 
     /**
-     * åˆ†ç»„
+     * ·Ö×é
      */
     private Map<String, GroupInfo> groups = new LinkedHashMap<>();
 
@@ -28,7 +27,7 @@ public class Swagger2Properties {
     @Data
     public static class GroupInfo {
         /**
-         * swagger ä¼šè§£æçš„åŒ…è·¯å¾„
+         * swagger »á½âÎöµÄ°üÂ·¾¶
          */
         private String basePackage;
 
@@ -38,7 +37,7 @@ public class Swagger2Properties {
         private String title;
 
         /**
-         * swagger ç»„ç›¸å…³è¯´æ˜
+         * swagger ×éÏà¹ØËµÃ÷
          */
         private String description;
     }

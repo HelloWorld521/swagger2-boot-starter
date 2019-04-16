@@ -19,13 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 1. è¯»å–é…ç½®æ–‡ä»¶
- * 2. å°†é…ç½®æ–‡ä»¶å†…å®¹èµ‹å€¼åˆ° swagger çš„ Docket å¯¹è±¡
- * 3. å°† Docket ä¾æ¬¡æ³¨å…¥åˆ° bean ä¸­ ï¼ˆéœ€è¦å®ç° BeanFactoryAware è·å–beanFatoryï¼‰
- * å…³é”®æ˜¯å¯¹ç»„çš„æ“ä½œ
+ * 1. ¶ÁÈ¡ÅäÖÃÎÄ¼ş
+ * 2. ½«ÅäÖÃÎÄ¼şÄÚÈİ¸³Öµµ½ swagger µÄ Docket ¶ÔÏó
+ * 3. ½« Docket ÒÀ´Î×¢Èëµ½ bean ÖĞ £¨ĞèÒªÊµÏÖ BeanFactoryAware »ñÈ¡beanFatory£©
+ * ¹Ø¼üÊÇ¶Ô×éµÄ²Ù×÷
  *
  * @author hjy
- * @date 2019/4/11
  **/
 @Configuration
 @EnableSwagger2
@@ -34,9 +33,9 @@ public class Swagger2AutoConfiguration implements BeanFactoryAware {
     private BeanFactory beanFactory;
 
     /**
-     * è·å– beanFactroy
+     * »ñÈ¡ beanFactroy
      * @param beanFactory beanFactory
-     * @throws BeansException
+     * @throws BeansException BeansException
      */
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
@@ -53,7 +52,7 @@ public class Swagger2AutoConfiguration implements BeanFactoryAware {
     public List<Docket> createRestOpenApi(Swagger2Properties properties) {
         ConfigurableBeanFactory configurableBeanFactory = (ConfigurableBeanFactory) beanFactory;
         List<Docket> docketList = new ArrayList<>();
-        // swagger é…ç½®
+        // swagger ÅäÖÃ
         for (String groupName : properties.getGroups().keySet()) {
             Swagger2Properties.GroupInfo groupInfo = properties.getGroups().get(groupName);
             String basePackage = groupInfo.getBasePackage();
@@ -65,7 +64,7 @@ public class Swagger2AutoConfiguration implements BeanFactoryAware {
                     .paths(PathSelectors.any())
                     .build();
             docketList.add(docket);
-            // docket åŠ å…¥ IOC å®¹å™¨
+            // docket ¼ÓÈë IOC ÈİÆ÷
             configurableBeanFactory.registerSingleton(groupName, docket);
         }
         return docketList;

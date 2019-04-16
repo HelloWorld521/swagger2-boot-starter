@@ -7,7 +7,7 @@ springboot 自动装配 swagger2
 1. 添加 pom 文件
     ```xml
         <dependency>
-            <groupId>com.moming.swagger</groupId>
+            <groupId>com.github.helloworld521</groupId>
             <artifactId>swagger2-boot-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
